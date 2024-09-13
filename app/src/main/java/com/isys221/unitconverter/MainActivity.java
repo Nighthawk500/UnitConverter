@@ -10,6 +10,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    //  Joseph Marvin
+    //  ISYS 221 - VL1
+    //  Individual Programming Assignment #2 - Unit Converter App
+    //  Due: 9/15/2024
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

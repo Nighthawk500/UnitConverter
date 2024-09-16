@@ -60,16 +60,23 @@ public class MainActivity extends AppCompatActivity {
 
     //Method for converting Euros to Dollars
     private void convertEurosToDollars() {
+        //Retrieves user input as a string
         String eurosStr = enterEurosEditText.getText().toString();
+        //Checks if user entered a value
         if (!eurosStr.isEmpty()) {
+            //Converts the string to a double
             double euros = Double.parseDouble(eurosStr);
+            //Calls the conversion method to get corresponding dollar amount
             double dollars = conversionModel.convertEurosToDollars(euros);
+            //Converts resulting dollars to a string and sends it to the display
             dollarResultEditText.setText(String.valueOf(dollars));
         } else {
+            //Prompts the user to enter text if they pressed the button without entering anything
             Toast.makeText(this, "Enter Euros", Toast.LENGTH_SHORT).show();
         }
     }
 
+    //Method for converting Km to miles
     private void convertKmToMiles() {
         String kmStr = enterKmEditText.getText().toString();
         if (!kmStr.isEmpty()) {

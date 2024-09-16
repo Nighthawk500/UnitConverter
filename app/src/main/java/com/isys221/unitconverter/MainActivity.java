@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,11 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         //Link the variables to UI elements
         enterEurosEditText = findViewById(R.id.enter_euros_edit_text);
@@ -54,10 +52,32 @@ public class MainActivity extends AppCompatActivity {
         convKmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                convertKmtoMiles();
+                convertKmToMiles();
             }
         });
 
+    }
 
+    //Method for converting Euros to Dollars
+    private void convertEurosToDollars() {
+        String eurosStr = enterEurosEditText.getText().toString();
+        if (!eurosStr.isEmpty()) {
+            double euros = Double.parseDouble(eurosStr);
+            double dollars = conversionModel.convertEurosToDollars(euros);
+            dollarResultEditText.setText(String.valueOf(dollars));
+        } else {
+            Toast.makeText(this, "Enter Euros", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void convertKmToMiles() {
+        String kmStr = enterKmEditText.getText().toString();
+        if (!kmStr.isEmpty()) {
+            double kilometers = Double.parseDouble(kmStr);
+            double miles = conversionModel.convertKmToMiles(kilometers);
+            milesResultEditText.setText(String.valueOf(miles));
+        } else {
+            Toast.makeText(this, "Enter Kilometers", Toast.LENGTH_SHORT).show();
+        }
     }
 }

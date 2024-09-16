@@ -1,84 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- Enter Euros to get Dollars -->
+    <!-- Euros to Dollars conversion text-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter Euros to get Dollars"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp" />
+
     <!-- Enter Euros -->
     <EditText
-        android:id="@id/enter_euros_edit_text"
-        android:layout_width="wrap_content"
+        android:id="@+id/enter_euros_edit_text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="67dp" />
-    <!-- "Result" text -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Result"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.295"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
-    <!-- Dollar result -->
-    <EditText
-        android:id="@id/dollar_result_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="67dp" />
+        android:hint="Enter Euros"
+        android:inputType="numberDecimal" />
 
-    <!-- KM to Miles -->
+    <!-- Button to convert Euros to Dollars -->
+    <Button
+        android:id="@+id/convEuroButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert Euros to Dollars"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- Display resulting Dollars -->
+    <EditText
+        android:id="@+id/dollar_result_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dollar Result"
+        android:inputType="none"
+        android:enabled="false"/>
+
+    <!-- Km to miles conversion text -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter Kilometers to get Miles"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264" />
-    <!-- Enter KM -->
-    <EditText
-        android:id="@id/enter_km_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="225dp" />
-    <!-- "Result" text -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Result"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.295"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341" />
-    <!-- Miles result -->
-    <EditText
-        android:id="@id/miles_result_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="225dp" />
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Button to enter km -->
+    <EditText
+        android:id="@+id/enter_km_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Kilometers"
+        android:inputType="numberDecimal" />
+
+    <!-- Button to convert km to miles -->
+    <Button
+        android:id="@+id/convKmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert KM"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- Display miles result-->
+    <EditText
+        android:id="@+id/miles_result_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Miles Result"
+        android:inputType="none"
+        android:enabled="false"/>
+
+</LinearLayout>

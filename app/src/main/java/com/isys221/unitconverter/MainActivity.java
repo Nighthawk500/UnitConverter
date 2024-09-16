@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 convertKmToMiles();
             }
         });
-
     }
 
     //Method for converting Euros to Dollars

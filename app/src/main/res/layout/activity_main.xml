@@ -63,7 +63,7 @@
         android:id="@+id/convKmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Convert KM"
+        android:text="Convert Kilometers to Miles"
         android:layout_gravity="center_horizontal"/>
 
     <!-- Display miles result-->
